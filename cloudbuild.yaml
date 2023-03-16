@@ -1,0 +1,9 @@
+steps:
+- name: 'gcr.io/cloud-builders/gcloud'
+  entrypoint: 'bash' 
+  args: ['gcloud', 'compute', 'scp', 'document.txt', 'gangeria6060@instance-2:/home/gangeria6060/project', '--zone=us-west4-b']
+
+logsBucket: 'gs://svproject/cloudbuild_data/'
+serviceAccount: 'projects/groovy-aquifer-380616/serviceAccounts/shubhamv0502-gmail-com@groovy-aquifer-380616.iam.gserviceaccount.com'
+options:
+  logging: GCS_ONLY
