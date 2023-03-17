@@ -13,7 +13,7 @@
 steps:
 - name: 'gcr.io/cloud-builders/gcloud'
   entrypoint: 'bash' 
-  args: ['gcloud', 'compute', 'scp', 'CloudBuild-VM-Pipeline/*', 'gangeria6060@instance-2:/home/gangeria6060/project', '--zone=us-west4-b']
+  args: ['gcloud', 'compute', 'scp', '-r', 'CloudBuild-VM-Pipeline/*', 'gangeria6060@instance-2:/home/gangeria6060/project', '--zone=us-west4-b']
 logsBucket: 'gs://desu-project/GCP-trigger-files/'
 serviceAccount: 'projects/$_PROJECT_ID/serviceAccounts/$_SERVICE_ACCOUNT_EMAIL'
 options:
