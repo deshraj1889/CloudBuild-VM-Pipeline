@@ -11,9 +11,10 @@
 
 
 steps:
-- name: 'gcr.io/cloud-builders/gcloud'
+- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
   entrypoint: 'bash' 
-  args: ['gcloud', 'compute', 'scp', '--path', 'CloudBuild-VM-Pipeline/', 'gangeria6060@instance-2:/home/gangeria6060/project', '--zone=us-west4-b']
+#   args: ['gcloud', 'compute', 'scp', 'CloudBuild-VM-Pipeline/', 'gangeria6060@instance-2:/home/gangeria6060/project', '--zone=us-west4-b']
+  args: ['gsutil', '-m', 'cp', '-r', '*', gangeria6060@instance-2:/home/gangeria6060/project', '--zone=us-west4-b']
 
 logsBucket: 'gs://desu-project/GCP-trigger-files/'
 serviceAccount: 'projects/$_PROJECT_ID/serviceAccounts/$_SERVICE_ACCOUNT_EMAIL'
