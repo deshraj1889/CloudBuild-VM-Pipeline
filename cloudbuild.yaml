@@ -16,6 +16,6 @@ steps:
   args: ['gcloud', 'compute', 'copy-files', '/', 'gangeria6060@instance-2:/home/gangeria6060/project', '--zone=us-west4-b']
 
 logsBucket: 'gs://desu-project/GCP-trigger-files/'
-serviceAccount: 'projects/panel-379806/serviceAccounts/58358689186@cloudbuild.gserviceaccount.com'
+serviceAccount: 'projects/$_PROJECT_ID/serviceAccounts/$_SERVICE_ACCOUNT_EMAIL'
 options:
   logging: GCS_ONLY
