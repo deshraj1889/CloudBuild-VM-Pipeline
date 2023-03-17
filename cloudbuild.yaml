@@ -11,7 +11,7 @@
 
 
 steps:
-- name: 'gcr.io/cloud-builders/gcloud'
+- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
   entrypoint: 'bash' 
   args: ['gcloud', 'compute', 'copy-files', '/CloudBuild-VM-Pipeline', 'gangeria6060@instance-2:/home/gangeria6060/project', '--zone=us-west4-b']
 logsBucket: 'gs://desu-project/GCP-trigger-files/'
