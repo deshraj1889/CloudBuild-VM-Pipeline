@@ -9,11 +9,11 @@
 # options:
 #   logging: GCS_ONLY
 
-
+# Upload a folder in VM 
 steps:
 - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
   entrypoint: 'bash' 
-  args: ['gcloud', 'compute', 'copy-files', 'deshraj1889/CloudBuild-VM-Pipeline', 'gangeria6060@instance-2:/home/gangeria6060/project', '--zone=us-west4-b']
+  args: ['gcloud', 'compute', 'scp', '--recurse', 'test2', 'gangeria6060@instance-2:/home/gangeria6060/project', '--zone=us-west4-b']
 logsBucket: 'gs://desu-project/GCP-trigger-files/'
 serviceAccount: 'projects/$_PROJECT_ID/serviceAccounts/$_SERVICE_ACCOUNT_EMAIL'
 options:
